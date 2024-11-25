@@ -42,9 +42,16 @@ generateBtn.addEventListener('click', generatePassword);
 copyBtn.addEventListener('click', () => {
     passwordField.select();
     document.execCommand('copy');
-    alert('Password copied to clipboard!');
-});
 
+    // Show notification
+    const notification = document.getElementById('copy-notification');
+    notification.classList.add('show');
+
+    // Hide notification after 2 seconds
+    setTimeout(() => {
+        notification.classList.remove('show');
+    }, 2000);
+});
 // Generate password function
 function generatePassword() {
     const length = parseInt(lengthInput.value);
