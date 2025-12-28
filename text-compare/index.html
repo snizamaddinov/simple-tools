@@ -4,18 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Compare</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsdiff/5.1.0/diff.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Text Compare</h1>
-    <div class="container">
-        <textarea id="text1" placeholder="Enter first text here..."></textarea>
-        <textarea id="text2" placeholder="Enter second text here..."></textarea>
+    <div class="container" id="inputContainer">
+        <div class="pane input-pane">
+            <div class="pane-header">
+                <span class="label">Original Text</span>
+            </div>
+            <textarea id="text1" placeholder="Paste original text here..." spellcheck="false"></textarea>
+        </div>
+
+        <div class="pane input-pane right-pane">
+            <div class="pane-header">
+                <span class="label">New Text</span>
+                <button id="compareBtn" class="action-btn">Compare</button>
+            </div>
+            <textarea id="text2" placeholder="Paste new text here..." spellcheck="false"></textarea>
+        </div>
     </div>
-    <div class="buttons">
-        <button id="compareBtn">Compare</button>
+
+    <div class="container result-container" id="resultContainer" style="display: none;">
+        <div class="pane output-pane">
+            <div class="pane-header">
+                <span class="label">Original Version</span>
+                <button id="editBtn" class="action-btn">Edit</button>
+            </div>
+            <div id="resultLeft" class="diff-output"></div>
+        </div>
+
+        <div class="pane output-pane right-pane">
+            <div class="pane-header">
+                <span class="label">New Version</span>
+            </div>
+            <div id="resultRight" class="diff-output"></div>
+        </div>
     </div>
-    <div class="result" id="result"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
