@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Text Extractor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="pane input-pane">
+            <div class="pane-header">
+                <span class="label">HTML Input</span>
+            </div>
+            <textarea id="htmlInput" placeholder="Paste your HTML here..." spellcheck="false"></textarea>
+        </div>
+        <div class="pane output-pane">
+            <div class="pane-header">
+                <span class="label">Extracted Text</span>
+                <button id="copyBtn" class="action-btn">Copy Text</button>
+            </div>
+            <textarea id="textOutput" placeholder="Result will appear here..." spellcheck="false"></textarea>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
