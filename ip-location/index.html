@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My IP & Location</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="pane main-pane">
+            <div class="pane-header">
+                <span class="label">Public IP Address</span>
+            </div>
+            <div class="ip-display-container">
+                <h1 id="ipAddress" class="loading">Loading...</h1>
+                <button id="copyIpBtn" class="action-btn">Copy IP</button>
+            </div>
+        </div>
+
+        <div class="pane details-pane">
+            <div class="pane-header">
+                <span class="label">Location Details</span>
+                <button id="refreshBtn" class="action-btn">Refresh</button>
+            </div>
+            
+            <div class="details-list" id="detailsList">
+                <div class="detail-item">
+                    <span class="detail-label">City</span>
+                    <span class="detail-value" id="city">-</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Region</span>
+                    <span class="detail-value" id="region">-</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Country</span>
+                    <span class="detail-value" id="country">-</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">ISP</span>
+                    <span class="detail-value" id="isp">-</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Coordinates</span>
+                    <span class="detail-value" id="coords">-</span>
+                </div>
+                <a id="mapsLink" href="#" target="_blank" class="maps-link" style="display: none;">View on Google Maps &rarr;</a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
