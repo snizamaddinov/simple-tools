@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="pane">
+            <div class="pane-header">
+                <span class="label">Markdown</span>
+            </div>
+            <textarea id="markdownInput" spellcheck="false" aria-label="Markdown input"></textarea>
+        </div>
+
+        <div class="pane right-pane">
+            <div class="pane-header">
+                <span class="label">Preview</span>
+                <div class="pane-actions">
+                    <button id="toggleHtmlBtn" class="action-btn" type="button">View HTML</button>
+                    <button id="copyHtmlBtn" class="action-btn" type="button">Copy HTML</button>
+                </div>
+            </div>
+            <div id="preview" class="preview" aria-live="polite"></div>
+            <div id="htmlPanel" class="html-panel hidden">
+                <textarea id="htmlOutput" class="html-output" aria-label="Generated HTML output"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it@14.1.0/dist/markdown-it.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

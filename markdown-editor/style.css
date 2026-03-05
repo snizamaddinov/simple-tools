@@ -1,0 +1,209 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.pane {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-right: 1px solid #333;
+    min-width: 0;
+}
+
+.right-pane {
+    border-right: none;
+}
+
+.pane-header {
+    margin-bottom: 10px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.label {
+    font-weight: 600;
+    color: #66afe9;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.pane-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.action-btn {
+    padding: 8px 12px;
+    background-color: #2d2d2d;
+    color: #66afe9;
+    border: 1px solid #66afe9;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.action-btn:hover {
+    background-color: #66afe9;
+    color: #1e1e1e;
+}
+
+.action-btn:active {
+    transform: translateY(1px);
+}
+
+#markdownInput {
+    flex: 1;
+    width: 100%;
+    resize: none;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 15px;
+    font-family: "Consolas", "Monaco", monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    outline: none;
+    background-color: #2d2d2d;
+    color: #f0f0f0;
+}
+
+#markdownInput:focus {
+    border-color: #66afe9;
+}
+
+.preview {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 18px;
+    background-color: #2d2d2d;
+    overflow-y: auto;
+    line-height: 1.6;
+    word-break: break-word;
+}
+
+.preview h1,
+.preview h2,
+.preview h3,
+.preview h4,
+.preview h5,
+.preview h6 {
+    color: #e8f3ff;
+    margin: 0 0 12px;
+}
+
+.preview p,
+.preview ul,
+.preview ol,
+.preview blockquote {
+    margin: 0 0 12px;
+}
+
+.preview code {
+    background-color: #1b1b1b;
+    border: 1px solid #3a3a3a;
+    border-radius: 4px;
+    padding: 0.1em 0.3em;
+    font-family: "Consolas", "Monaco", monospace;
+}
+
+.preview pre {
+    background-color: #1b1b1b;
+    border: 1px solid #3a3a3a;
+    border-radius: 6px;
+    padding: 12px;
+    overflow-x: auto;
+    margin: 0 0 12px;
+}
+
+.preview pre code {
+    border: none;
+    padding: 0;
+    background: transparent;
+}
+
+.preview a {
+    color: #66afe9;
+}
+
+.preview blockquote {
+    padding-left: 12px;
+    border-left: 3px solid #66afe9;
+    color: #c8d6e5;
+}
+
+.html-panel {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+}
+
+.html-output {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    resize: none;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 12px;
+    font-family: "Consolas", "Monaco", monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    outline: none;
+    background-color: #2d2d2d;
+    color: #f0f0f0;
+    overflow: auto;
+    white-space: pre;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .pane {
+        min-height: 50vh;
+        border-right: none;
+        border-bottom: 1px solid #333;
+    }
+
+    .right-pane {
+        border-bottom: none;
+    }
+
+    .pane-header {
+        flex-wrap: wrap;
+    }
+}
