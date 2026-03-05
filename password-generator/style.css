@@ -1,6 +1,6 @@
 body {
-    background-color: #1e1e1e; /* Lighter background */
-    color: #f0f0f0; /* Softer white text */
+    background-color: #1e1e1e;
+    color: #f0f0f0;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 50px;
@@ -21,7 +21,7 @@ body {
     flex: 1;
     padding: 10px;
     font-size: 18px;
-    background-color: #2b2b2b; /* White background */
+    background-color: #2b2b2b;
     color: #f0f0f0;
     border: 1px solid #444;
     border-right: none;
@@ -31,7 +31,7 @@ body {
 #copy-btn {
     padding: 10px 20px;
     font-size: 18px;
-    background-color: #5a9bd5; /* Standard blue */
+    background-color: #5a9bd5;
     color: #ffffff;
     border: none;
     cursor: pointer;
@@ -80,7 +80,7 @@ body {
     width: 100%;
     padding: 10px;
     font-size: 18px;
-    background-color: #28a745; /* Green for action buttons */
+    background-color: #28a745;
     color: #ffffff;
     border: none;
     cursor: pointer;
@@ -91,10 +91,9 @@ body {
     background-color: #218838;
 }
 
-/* Notification label styles */
 #copy-notification {
     margin-top: 10px;
-    color: #28a745; /* Green color for success */
+    color: #28a745;
     font-size: 14px;
     visibility: hidden;
     opacity: 0;
