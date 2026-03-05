@@ -2,33 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Password Generator</h1>
     <div class="container">
-        <div class="password-container">
-            <input type="text" id="password" value="" placeholder="Your Secure Password">
-            <button id="copy-btn">Copy</button>
-        </div>
-        <!-- New notification label -->
-        <div id="copy-notification" class="hidden">Password copied to clipboard!</div>
-        <div class="controls">
-            <div class="option">
-                <label><input type="checkbox" id="lowercase" checked> Lowercase</label>
-                <label><input type="checkbox" id="uppercase" checked> Uppercase</label>
+        <div class="pane generator-pane">
+            <div class="pane-header">
+                <span class="label">Password Generator</span>
+                <button id="generate-btn" class="action-btn" type="button">Regenerate</button>
             </div>
-            <div class="option">
-                <label><input type="checkbox" id="numbers"> Numbers</label>
-                <label><input type="checkbox" id="symbols"> Symbols</label>
+
+            <div class="password-panel">
+                <div class="password-row">
+                    <input
+                        type="text"
+                        id="password"
+                        value=""
+                        placeholder="Generate a secure password"
+                        readonly
+                        aria-label="Generated password"
+                    >
+                    <button id="copy-btn" class="action-btn" type="button">Copy</button>
+                </div>
+                <div class="status-row">
+                    <div class="strength">
+                        <span class="strength-label">Strength</span>
+                        <div class="strength-meter" aria-hidden="true">
+                            <div id="strength-fill"></div>
+                        </div>
+                        <span id="strength-text">-</span>
+                    </div>
+                    <span id="copy-notification" aria-live="polite"></span>
+                </div>
             </div>
-            <div class="length">
-                <label for="length">Length:</label>
-                <input type="number" id="length-input" min="4" max="32" value="12">
-                <input type="range" id="length-slider" min="4" max="32" value="12">
+
+            <div class="controls-panel">
+                <div class="control-row length-row">
+                    <label for="length-slider">Length</label>
+                    <input type="number" id="length-input" min="4" max="64" value="16">
+                    <input type="range" id="length-slider" min="4" max="64" value="16">
+                </div>
+
+                <div class="options-grid">
+                    <label class="option-card" for="lowercase">
+                        <span>Lowercase (a-z)</span>
+                        <input type="checkbox" id="lowercase" checked>
+                    </label>
+                    <label class="option-card" for="uppercase">
+                        <span>Uppercase (A-Z)</span>
+                        <input type="checkbox" id="uppercase" checked>
+                    </label>
+                    <label class="option-card" for="numbers">
+                        <span>Numbers (0-9)</span>
+                        <input type="checkbox" id="numbers" checked>
+                    </label>
+                    <label class="option-card" for="symbols">
+                        <span>Symbols (!@#$)</span>
+                        <input type="checkbox" id="symbols">
+                    </label>
+                </div>
             </div>
-            <button id="generate-btn">Regenerate Password</button>
         </div>
     </div>
     <script src="script.js"></script>
