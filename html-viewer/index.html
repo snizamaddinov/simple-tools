@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Viewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="pane">
+            <div class="pane-header">
+                <span>Raw HTML</span>
+            </div>
+            <textarea id="htmlInput" spellcheck="false" aria-label="Raw HTML input" placeholder="<h1>Hello</h1>&#10;<p>This is rendered HTML.</p>"></textarea>
+        </div>
+
+        <div class="pane">
+            <div class="pane-header">
+                <span>Preview</span>
+            </div>
+            <iframe id="htmlPreview" title="Rendered HTML preview" sandbox="allow-scripts"></iframe>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
